@@ -10,11 +10,11 @@ export function MenuSectionBlock({
   reverse = false,
 }: {
   section: MenuSection;
-  image?: string;
-  imageAlt?: string;
-  imageWidth?: number;
-  imageHeight?: number;
-  reverse?: boolean;
+  image?: string | undefined;
+  imageAlt?: string | undefined;
+  imageWidth?: number | undefined;
+  imageHeight?: number | undefined;
+  reverse?: boolean | undefined;
 }) {
   return (
     <section
