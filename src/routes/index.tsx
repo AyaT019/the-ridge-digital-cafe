@@ -128,65 +128,42 @@ function Index() {
           </Reveal>
         </section>
 
-        <MenuSectionBlock
-          section={menuSections[0]}
-          image={sectionImages["petit-dejeuner"].src}
-          imageAlt={sectionImages["petit-dejeuner"].alt}
-          imageWidth={sectionImages["petit-dejeuner"].w}
-          imageHeight={sectionImages["petit-dejeuner"].h}
-        />
+        {menuSections.map((section, i) => {
+          const img = sectionImages[section.id];
+          return (
+            <div key={section.id}>
+              <MenuSectionBlock
+                section={section}
+                image={img?.src}
+                imageAlt={img?.alt}
+                imageWidth={img?.w}
+                imageHeight={img?.h}
+                reverse={i % 2 === 1}
+              />
+              {i === 0 ? (
+                <Atmosphere
+                  image={atmosphere1}
+                  alt="Fauteuil en velours près d'une fenêtre, tasse de café et plantes tropicales"
+                  quote="Prenez votre temps."
+                  caption="Salle intérieure · fin d'après-midi"
+                  width={1920}
+                  height={1088}
+                />
+              ) : null}
+              {i === 2 ? (
+                <Atmosphere
+                  image={atmosphere2}
+                  alt="Terrasse du café le soir, guirlandes lumineuses et lanternes en laiton face à la mer"
+                  quote="Le soir tombe, la table reste."
+                  caption="Terrasse · vue mer"
+                  width={1920}
+                  height={1088}
+                />
+              ) : null}
+            </div>
+          );
+        })}
 
-        <Atmosphere
-          image={atmosphere1}
-          alt="Fauteuil en velours près d'une fenêtre, tasse de café et plantes tropicales"
-          quote="Prenez votre temps."
-          caption="Salle intérieure · fin d'après-midi"
-          width={1920}
-          height={1088}
-        />
-
-        <MenuSectionBlock
-          section={menuSections[1]}
-          image={sectionImages.cafes.src}
-          imageAlt={sectionImages.cafes.alt}
-          imageWidth={sectionImages.cafes.w}
-          imageHeight={sectionImages.cafes.h}
-          reverse
-        />
-
-        <MenuSectionBlock
-          section={menuSections[2]}
-          image={sectionImages.fraicheur.src}
-          imageAlt={sectionImages.fraicheur.alt}
-          imageWidth={sectionImages.fraicheur.w}
-          imageHeight={sectionImages.fraicheur.h}
-        />
-
-        <Atmosphere
-          image={atmosphere2}
-          alt="Terrasse du café le soir, guirlandes lumineuses et lanternes en laiton face à la mer"
-          quote="Le soir tombe, la table reste."
-          caption="Terrasse · vue mer"
-          width={1920}
-          height={1088}
-        />
-
-        <MenuSectionBlock
-          section={menuSections[3]}
-          image={sectionImages.sucre.src}
-          imageAlt={sectionImages.sucre.alt}
-          imageWidth={sectionImages.sucre.w}
-          imageHeight={sectionImages.sucre.h}
-          reverse
-        />
-
-        <MenuSectionBlock
-          section={menuSections[4]}
-          image={sectionImages.sale.src}
-          imageAlt={sectionImages.sale.alt}
-          imageWidth={sectionImages.sale.w}
-          imageHeight={sectionImages.sale.h}
-        />
       </main>
 
       <SiteFooter />
