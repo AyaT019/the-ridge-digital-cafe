@@ -39,7 +39,7 @@ export function SiteHeader() {
                 href={`#${s.id}`}
                 className="transition-colors hover:text-accent"
               >
-                {s.title.split(" ")[0]}
+                {s.title.split(" ")[0]?.replace(/[,&]$/, "")}
               </a>
             </li>
           ))}
