@@ -13,7 +13,7 @@ export function SiteFooter() {
             <p className="font-display text-4xl leading-none tracking-tight">
               The Ridge
             </p>
-            <p className="text-eyebrow mt-4 text-espresso-foreground/60">
+            <p className="text-label mt-4 text-espresso-foreground/60">
               Kélibia · Tunisie
             </p>
             <p className="mt-6 max-w-xs text-sm leading-relaxed text-espresso-foreground/70">
@@ -23,7 +23,7 @@ export function SiteFooter() {
           </div>
 
           <div>
-            <h2 className="text-eyebrow text-espresso-foreground/50">Horaires</h2>
+            <h2 className="text-label text-espresso-foreground/50">Horaires</h2>
             <ul className="mt-6 space-y-3 text-sm text-espresso-foreground/80">
               {hours.map((h) => (
                 <li key={h.days} className="flex justify-between gap-6">
@@ -37,7 +37,7 @@ export function SiteFooter() {
           </div>
 
           <div>
-            <h2 className="text-eyebrow text-espresso-foreground/50">Nous trouver</h2>
+            <h2 className="text-label text-espresso-foreground/50">Nous trouver</h2>
             <ul className="mt-6 space-y-3 text-sm">
               <li>
                 <a

@@ -28,19 +28,20 @@ export function Atmosphere({
       <div className="veil absolute inset-0" />
       <div className="relative flex h-full items-center justify-center px-6">
         <Reveal className="text-center">
-          <p className="font-display text-4xl leading-[1.05] tracking-tight text-espresso-foreground sm:text-6xl md:text-7xl">
+          <p className="font-display text-3xl leading-[1.1] tracking-tight text-espresso-foreground sm:text-5xl md:text-6xl">
             {quote}
           </p>
           {caption ? (
             <>
-              <span className="rule-gold mx-auto mt-8 block h-px w-24 opacity-70" />
-              <p className="text-eyebrow mt-6 text-espresso-foreground/70">
+              <span className="rule-gold mx-auto mt-8 block h-px w-20 opacity-60" />
+              <p className="text-label mt-6 text-espresso-foreground/70">
                 {caption}
               </p>
             </>
           ) : null}
         </Reveal>
       </div>
+
     </section>
   );
 }
