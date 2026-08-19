@@ -75,9 +75,37 @@ const sectionImages: Record<
 };
 
 function Index() {
+  const [query, setQuery] = useState("");
+  const q = query.trim().toLowerCase();
+
+  const sections = useMemo(() => {
+    if (!q) return menuSections;
+    return menuSections
+      .map((section) => ({
+        ...section,
+        groups: section.groups
+          .map((group) => ({
+            ...group,
+            items: group.items.filter(
+              (item) =>
+                item.name.toLowerCase().includes(q) ||
+                (item.description ?? "").toLowerCase().includes(q) ||
+                group.title.toLowerCase().includes(q),
+            ),
+          }))
+          .filter((group) => group.items.length > 0),
+      }))
+      .filter((section) => section.groups.length > 0);
+  }, [q]);
+
+  const resultCount = sections.reduce(
+    (n, s) => n + s.groups.reduce((m, g) => m + g.items.length, 0),
+    0,
+  );
+
   return (
     <div id="top" className="bg-background">
-      <SiteHeader />
+      <SiteHeader query={query} onQueryChange={setQuery} />
 
       <main>
         {/* Hero */}
@@ -92,7 +120,7 @@ function Index() {
           />
           <div className="veil absolute inset-0" />
           <div className="relative mx-auto w-full max-w-6xl px-6 pb-20 md:pb-28">
-            <p className="text-eyebrow animate-rise text-espresso-foreground/70">
+            <p className="text-label animate-rise text-espresso-foreground/70">
               Kélibia · depuis 2019
             </p>
             <h1 className="font-display animate-rise mt-6 text-6xl leading-[0.88] tracking-tight text-espresso-foreground sm:text-8xl md:text-[9rem]">
@@ -105,7 +133,7 @@ function Index() {
               </p>
               <a
                 href="#petit-dejeuner"
-                className="text-eyebrow animate-rise inline-flex w-fit items-center gap-3 border-b border-accent pb-2 text-espresso-foreground transition-colors hover:text-accent"
+                className="text-label animate-rise inline-flex w-fit items-center gap-3 border-b border-accent pb-2 text-espresso-foreground transition-colors hover:text-accent"
               >
                 Découvrir la carte
                 <span aria-hidden>↓</span>
@@ -115,20 +143,41 @@ function Index() {
         </section>
 
         {/* Manifesto */}
-        <section className="mx-auto w-full max-w-4xl px-6 py-24 text-center md:py-32">
+        <section className="mx-auto w-full max-w-3xl px-6 py-20 text-center md:py-28">
           <Reveal>
-            <span className="rule-gold mx-auto block h-px w-20 opacity-70" />
-            <p className="font-display mt-10 text-3xl leading-[1.25] tracking-tight text-foreground md:text-5xl">
+            <Ornament />
+            <p className="font-display mt-8 text-2xl leading-[1.3] tracking-tight text-foreground md:text-4xl">
               Rien ici n'est pressé. Le café coule, la lumière tourne, et la
               journée prend la forme de votre table.
             </p>
-            <p className="text-eyebrow mt-10 text-muted-foreground">
-              La maison
-            </p>
+            <p className="text-label mt-8 text-muted-foreground">La maison</p>
           </Reveal>
         </section>
 
-        {menuSections.map((section, i) => {
+        {q ? (
+          <div className="mx-auto w-full max-w-6xl px-6">
+            <p className="text-label border-b border-border pb-4 text-muted-foreground">
+              {resultCount} résultat{resultCount > 1 ? "s" : ""} pour « {query} »
+            </p>
+          </div>
+        ) : null}
+
+        {sections.length === 0 ? (
+          <div className="mx-auto w-full max-w-6xl px-6 py-24 text-center">
+            <p className="font-display text-3xl tracking-tight text-foreground">
+              Rien à cette carte sous ce nom.
+            </p>
+            <button
+              type="button"
+              onClick={() => setQuery("")}
+              className="text-label mt-6 border-b border-accent pb-1 text-muted-foreground transition-colors hover:text-accent-foreground"
+            >
+              Voir toute la carte
+            </button>
+          </div>
+        ) : null}
+
+        {sections.map((section, i) => {
           const img = sectionImages[section.id];
           return (
             <div key={section.id}>
@@ -140,7 +189,7 @@ function Index() {
                 imageHeight={img?.h}
                 reverse={i % 2 === 1}
               />
-              {i === 0 ? (
+              {!q && i === 0 ? (
                 <Atmosphere
                   image={atmosphere1}
                   alt="Fauteuil en velours près d'une fenêtre, tasse de café et plantes tropicales"
@@ -150,7 +199,7 @@ function Index() {
                   height={1088}
                 />
               ) : null}
-              {i === 2 ? (
+              {!q && i === 2 ? (
                 <Atmosphere
                   image={atmosphere2}
                   alt="Terrasse du café le soir, guirlandes lumineuses et lanternes en laiton face à la mer"
@@ -163,10 +212,10 @@ function Index() {
             </div>
           );
         })}
-
       </main>
 
       <SiteFooter />
     </div>
   );
 }
+
