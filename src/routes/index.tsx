@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useMemo, useState } from "react";
 
 import heroInterior from "@/assets/hero-interior.jpg";
 import atmosphere1 from "@/assets/atmosphere-1.jpg";
@@ -15,6 +16,7 @@ import { SiteFooter } from "@/components/ridge/SiteFooter";
 import { MenuSectionBlock } from "@/components/ridge/MenuSectionBlock";
 import { Atmosphere } from "@/components/ridge/Atmosphere";
 import { Reveal } from "@/components/ridge/Reveal";
+import { Ornament } from "@/components/ridge/Ornament";
 
 export const Route = createFileRoute("/")({
   head: () => ({
