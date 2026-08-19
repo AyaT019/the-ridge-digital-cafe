@@ -1,5 +1,6 @@
 import type { MenuSection } from "@/data/menu";
 import { Reveal } from "./Reveal";
+import { LeafMark } from "./Ornament";
 
 export function MenuSectionBlock({
   section,
@@ -19,52 +20,57 @@ export function MenuSectionBlock({
   return (
     <section
       id={section.id}
-      className="mx-auto w-full max-w-6xl scroll-mt-24 px-6 py-20 md:py-28"
+      className="mx-auto w-full max-w-6xl scroll-mt-32 px-6 py-16 md:py-24"
     >
       <Reveal>
-        <header className="max-w-2xl">
-          <p className="text-eyebrow text-muted-foreground">{section.eyebrow}</p>
-          <h2 className="font-display mt-4 text-5xl leading-[0.95] tracking-tight text-foreground md:text-7xl">
-            {section.title}
-          </h2>
-          <p className="mt-6 max-w-xl text-sm leading-relaxed text-muted-foreground md:text-base">
-            {section.intro}
-          </p>
+        <header className="grid gap-6 border-t border-border pt-8 md:grid-cols-[auto_minmax(0,1fr)] md:gap-12">
+          <div className="flex items-center gap-3">
+            <LeafMark className="h-5 w-5 shrink-0 text-accent" />
+            <p className="text-label text-muted-foreground">{section.eyebrow}</p>
+          </div>
+          <div className="min-w-0">
+            <h2 className="font-display text-4xl leading-[0.98] tracking-tight text-foreground sm:text-5xl md:text-6xl">
+              {section.title}
+            </h2>
+            <p className="mt-4 max-w-lg text-sm leading-relaxed text-muted-foreground">
+              {section.intro}
+            </p>
+          </div>
         </header>
       </Reveal>
 
       <div
-        className={`mt-14 grid gap-14 ${image ? "lg:grid-cols-[1.15fr_0.85fr]" : ""} ${
-          reverse ? "lg:[&>figure]:order-first" : ""
-        }`}
+        className={`mt-12 grid gap-12 md:mt-16 ${
+          image ? "lg:grid-cols-[1.2fr_0.8fr] lg:gap-16" : ""
+        } ${reverse ? "lg:[&>figure]:order-first" : ""}`}
       >
         <div className="grid gap-x-14 gap-y-12 sm:grid-cols-2">
           {section.groups.map((group, gi) => (
-            <Reveal key={group.title} delay={gi * 70}>
+            <Reveal key={group.title} delay={gi * 60}>
               <div>
-                <div className="flex items-baseline gap-4">
-                  <h3 className="text-eyebrow text-accent-foreground/80">
+                <div className="flex items-baseline gap-3">
+                  <h3 className="text-label text-accent-foreground">
                     {group.title}
                   </h3>
-                  <span className="rule-gold h-px flex-1 opacity-60" />
+                  <span className="hairline flex-1 opacity-70" />
                 </div>
-                <ul className="mt-6 space-y-5">
+                <ul className="mt-5 space-y-4">
                   {group.items.map((item) => (
                     <li key={item.name} className="group">
-                      <div className="flex items-baseline gap-3">
-                        <span className="font-display text-xl tracking-tight text-foreground transition-colors group-hover:text-accent-foreground">
+                      <div className="flex items-baseline gap-2">
+                        <span className="font-display text-lg leading-snug tracking-tight text-foreground transition-colors group-hover:text-accent-foreground">
                           {item.name}
                         </span>
-                        <span className="mb-1 flex-1 border-b border-dotted border-border" />
-                        <span className="font-sans text-sm tabular-nums text-muted-foreground">
+                        <span className="leader" />
+                        <span className="price-tabular shrink-0 text-sm text-foreground/80">
                           {item.price}
-                          <span className="ml-1 text-[0.65rem] uppercase tracking-widest opacity-70">
+                          <span className="ml-1 text-[0.6rem] uppercase tracking-[0.2em] text-muted-foreground">
                             dt
                           </span>
                         </span>
                       </div>
                       {item.description ? (
-                        <p className="mt-1.5 max-w-md text-[0.8rem] leading-relaxed text-muted-foreground/80">
+                        <p className="mt-1 max-w-md text-[0.78rem] leading-relaxed text-muted-foreground/85">
                           {item.description}
                         </p>
                       ) : null}
@@ -79,16 +85,19 @@ export function MenuSectionBlock({
         {image ? (
           <figure className="hidden lg:block">
             <Reveal delay={120}>
-              <div className="sticky top-24 overflow-hidden">
-                <img
-                  src={image}
-                  alt={imageAlt ?? section.title}
-                  width={imageWidth}
-                  height={imageHeight}
-                  loading="lazy"
-                  className="h-[34rem] w-full object-cover transition-transform duration-[1400ms] ease-out hover:scale-[1.04]"
-                />
-                <figcaption className="text-eyebrow mt-4 text-muted-foreground">
+              <div className="sticky top-32">
+                <div className="overflow-hidden">
+                  <img
+                    src={image}
+                    alt={imageAlt ?? section.title}
+                    width={imageWidth}
+                    height={imageHeight}
+                    loading="lazy"
+                    className="h-[32rem] w-full object-cover transition-transform duration-[1600ms] ease-out hover:scale-[1.04]"
+                  />
+                </div>
+                <figcaption className="text-label mt-4 flex items-center gap-3 text-muted-foreground">
+                  <span className="rule-gold h-px w-8 opacity-70" />
                   {section.title}
                 </figcaption>
               </div>
