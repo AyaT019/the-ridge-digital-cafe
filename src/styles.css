@@ -200,3 +200,46 @@
     transition: none;
   }
 }
+
+/* ——— Editorial utilities ——— */
+
+@utility text-label {
+  font-family: var(--font-sans);
+  font-size: 0.625rem;
+  font-weight: 400;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+}
+
+@utility leader {
+  flex: 1 1 auto;
+  align-self: flex-end;
+  margin-bottom: 0.35rem;
+  height: 1px;
+  background-image: radial-gradient(
+    circle,
+    color-mix(in oklab, var(--color-taupe) 70%, transparent) 1px,
+    transparent 1px
+  );
+  background-size: 6px 1px;
+  background-repeat: repeat-x;
+  opacity: 0.7;
+}
+
+@utility hairline {
+  height: 1px;
+  background-color: color-mix(in oklab, var(--color-border) 90%, transparent);
+}
+
+@utility price-tabular {
+  font-family: var(--font-sans);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.06em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-rise,
+  .animate-slow-zoom {
+    animation: none !important;
+  }
+}
