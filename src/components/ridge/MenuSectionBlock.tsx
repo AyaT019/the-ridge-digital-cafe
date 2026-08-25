@@ -8,6 +8,10 @@ export function MenuSectionBlock({
   imageAlt,
   imageWidth,
   imageHeight,
+  secondaryImage,
+  secondaryImageAlt,
+  secondaryImageWidth,
+  secondaryImageHeight,
   reverse = false,
 }: {
   section: MenuSection;
@@ -15,6 +19,10 @@ export function MenuSectionBlock({
   imageAlt?: string | undefined;
   imageWidth?: number | undefined;
   imageHeight?: number | undefined;
+  secondaryImage?: string | undefined;
+  secondaryImageAlt?: string | undefined;
+  secondaryImageWidth?: number | undefined;
+  secondaryImageHeight?: number | undefined;
   reverse?: boolean | undefined;
 }) {
   return (
