@@ -8,6 +8,10 @@ export function MenuSectionBlock({
   imageAlt,
   imageWidth,
   imageHeight,
+  secondaryImage,
+  secondaryImageAlt,
+  secondaryImageWidth,
+  secondaryImageHeight,
   reverse = false,
 }: {
   section: MenuSection;
@@ -15,6 +19,10 @@ export function MenuSectionBlock({
   imageAlt?: string | undefined;
   imageWidth?: number | undefined;
   imageHeight?: number | undefined;
+  secondaryImage?: string | undefined;
+  secondaryImageAlt?: string | undefined;
+  secondaryImageWidth?: number | undefined;
+  secondaryImageHeight?: number | undefined;
   reverse?: boolean | undefined;
 }) {
   return (
@@ -85,7 +93,7 @@ export function MenuSectionBlock({
         {image ? (
           <figure className="hidden lg:block">
             <Reveal delay={120}>
-              <div className="sticky top-32">
+              <div className="sticky top-32 space-y-10">
                 <div className="overflow-hidden">
                   <img
                     src={image}
@@ -100,6 +108,19 @@ export function MenuSectionBlock({
                   <span className="rule-gold h-px w-8 opacity-70" />
                   {section.title}
                 </figcaption>
+
+                {secondaryImage ? (
+                  <div className="overflow-hidden">
+                    <img
+                      src={secondaryImage}
+                      alt={secondaryImageAlt ?? section.title}
+                      width={secondaryImageWidth}
+                      height={secondaryImageHeight}
+                      loading="lazy"
+                      className="h-[32rem] w-full object-cover transition-transform duration-[1600ms] ease-out hover:scale-[1.04]"
+                    />
+                  </div>
+                ) : null}
               </div>
             </Reveal>
           </figure>
