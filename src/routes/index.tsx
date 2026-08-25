@@ -202,6 +202,10 @@ function Index() {
                 imageAlt={img?.alt}
                 imageWidth={img?.w}
                 imageHeight={img?.h}
+                secondaryImage={img?.secondary?.src}
+                secondaryImageAlt={img?.secondary?.alt}
+                secondaryImageWidth={img?.secondary?.w}
+                secondaryImageHeight={img?.secondary?.h}
                 reverse={i % 2 === 1}
               />
               {!q && i === 0 ? (
