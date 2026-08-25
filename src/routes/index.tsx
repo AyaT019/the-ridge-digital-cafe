@@ -63,8 +63,8 @@ const sectionImages: Record<
     h: 1760,
   },
   sucre: {
-    src: sweets,
-    alt: "Pancakes dorés nappés de chocolat et pistache",
+    src: sweetsAsset.url,
+    alt: "Moelleux au chocolat coulant avec glace vanille et banane",
     w: 1408,
     h: 1760,
   },
