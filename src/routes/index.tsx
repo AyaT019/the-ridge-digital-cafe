@@ -57,8 +57,8 @@ const sectionImages: Record<
     h: 1760,
   },
   fraicheur: {
-    src: drinks,
-    alt: "Jus pressés et mojito à la menthe fraîche",
+    src: mojitoFreshAsset.url,
+    alt: "Mojito rafraîchissant à la menthe et citron vert, servi avec glace pilée",
     w: 1408,
     h: 1760,
   },
