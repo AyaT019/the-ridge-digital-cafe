@@ -4,7 +4,7 @@ import { useMemo, useState } from "react";
 import heroInterior from "@/assets/hero-interior.jpg";
 import atmosphere1 from "@/assets/atmosphere-1.jpg";
 import atmosphere2 from "@/assets/atmosphere-2.jpg";
-import breakfast from "@/assets/breakfast.jpg";
+import breakfastAsset from "@/assets/ridge-breakfast.webp.asset.json";
 import coffee from "@/assets/coffee.jpg";
 import drinks from "@/assets/drinks.jpg";
 import sweets from "@/assets/sweets.jpg";
@@ -45,7 +45,7 @@ const sectionImages: Record<
   { src: string; alt: string; w: number; h: number }
 > = {
   "petit-dejeuner": {
-    src: breakfast,
+    src: breakfastAsset.url,
     alt: "Table de petit déjeuner en marbre avec croissants, omelette et fruits frais",
     w: 1600,
     h: 1104,
