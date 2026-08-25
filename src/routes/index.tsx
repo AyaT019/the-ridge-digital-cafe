@@ -7,7 +7,7 @@ import atmosphere2 from "@/assets/atmosphere-2.jpg";
 import breakfastAsset from "@/assets/ridge-breakfast.webp.asset.json";
 import pistachioLatteAsset from "@/assets/ridge-pistachio-latte.png.asset.json";
 import mojitoFreshAsset from "@/assets/ridge-mojito-fresh.png.asset.json";
-import sweets from "@/assets/sweets.jpg";
+import sweetsAsset from "@/assets/ridge-sweet-chocolate.png.asset.json";
 import savory from "@/assets/savory.jpg";
 
 import { menuSections } from "@/data/menu";
@@ -63,8 +63,8 @@ const sectionImages: Record<
     h: 1760,
   },
   sucre: {
-    src: sweets,
-    alt: "Pancakes dorés nappés de chocolat et pistache",
+    src: sweetsAsset.url,
+    alt: "Moelleux au chocolat coulant avec glace vanille et banane",
     w: 1408,
     h: 1760,
   },
