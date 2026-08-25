@@ -43,7 +43,13 @@ export const Route = createFileRoute("/")({
 
 const sectionImages: Record<
   string,
-  { src: string; alt: string; w: number; h: number }
+  {
+    src: string;
+    alt: string;
+    w: number;
+    h: number;
+    secondary?: { src: string; alt: string; w: number; h: number };
+  }
 > = {
   "petit-dejeuner": {
     src: breakfastAsset.url,
@@ -62,6 +68,12 @@ const sectionImages: Record<
     alt: "Mojito rafraîchissant à la menthe et citron vert, servi avec glace pilée",
     w: 1408,
     h: 1760,
+    secondary: {
+      src: milkshakeAsset.url,
+      alt: "Milkshake chocolaté gourmand avec crème chantilly et éclats de noisette",
+      w: 1408,
+      h: 1760,
+    },
   },
   sucre: {
     src: sweetsAsset.url,
