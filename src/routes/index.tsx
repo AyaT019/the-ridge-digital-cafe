@@ -9,7 +9,7 @@ import pistachioLatteAsset from "@/assets/ridge-pistachio-latte.png.asset.json";
 import mojitoFreshAsset from "@/assets/ridge-mojito-fresh.png.asset.json";
 import milkshakeAsset from "@/assets/ridge-milkshake-chocolate.png.asset.json";
 import sweetsAsset from "@/assets/ridge-sweet-chocolate.png.asset.json";
-import savory from "@/assets/savory.jpg";
+import savoryAsset from "@/assets/ridge-savory-pizza-calzone.png.asset.json";
 
 import { menuSections } from "@/data/menu";
 import { SiteHeader } from "@/components/ridge/SiteHeader";
@@ -82,8 +82,8 @@ const sectionImages: Record<
     h: 1760,
   },
   sale: {
-    src: savory,
-    alt: "Pizza au four à bois et makloub à l'escalope",
+    src: savoryAsset.url,
+    alt: "Pizza garnie au thon et calzone doré avec frites rustiques",
     w: 1408,
     h: 1760,
   },
