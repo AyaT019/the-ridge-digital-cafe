@@ -51,8 +51,8 @@ const sectionImages: Record<
     h: 1104,
   },
   cafes: {
-    src: coffee,
-    alt: "Espresso versé dans une tasse en céramique",
+    src: pistachioLatteAsset.url,
+    alt: "Latte au pistache crémeux, saupoudré de brisures de pistache",
     w: 1408,
     h: 1760,
   },
