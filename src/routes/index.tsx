@@ -6,7 +6,7 @@ import atmosphere1 from "@/assets/atmosphere-1.jpg";
 import atmosphere2 from "@/assets/atmosphere-2.jpg";
 import breakfastAsset from "@/assets/ridge-breakfast.webp.asset.json";
 import pistachioLatteAsset from "@/assets/ridge-pistachio-latte.png.asset.json";
-import drinks from "@/assets/drinks.jpg";
+import mojitoFreshAsset from "@/assets/ridge-mojito-fresh.png.asset.json";
 import sweets from "@/assets/sweets.jpg";
 import savory from "@/assets/savory.jpg";
 
@@ -57,8 +57,8 @@ const sectionImages: Record<
     h: 1760,
   },
   fraicheur: {
-    src: drinks,
-    alt: "Jus pressés et mojito à la menthe fraîche",
+    src: mojitoFreshAsset.url,
+    alt: "Mojito rafraîchissant à la menthe et citron vert, servi avec glace pilée",
     w: 1408,
     h: 1760,
   },
