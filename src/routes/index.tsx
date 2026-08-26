@@ -3,7 +3,6 @@ import { useMemo, useState } from "react";
 
 import heroInterior from "@/assets/hero-interior.jpg";
 import atmosphere1 from "@/assets/atmosphere-1.jpg";
-import atmosphere2 from "@/assets/atmosphere-2.jpg";
 import breakfastAsset from "@/assets/ridge-breakfast.webp.asset.json";
 import pistachioLatteAsset from "@/assets/ridge-pistachio-latte.png.asset.json";
 import mojitoFreshAsset from "@/assets/ridge-mojito-fresh.png.asset.json";
