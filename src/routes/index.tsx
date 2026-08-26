@@ -217,16 +217,6 @@ function Index() {
                   height={1088}
                 />
               ) : null}
-              {!q && i === 2 ? (
-                <Atmosphere
-                  image={atmosphere2}
-                  alt="Terrasse du café le soir, guirlandes lumineuses et lanternes en laiton face à la mer"
-                  quote="Le soir tombe, la table reste."
-                  caption="Terrasse · vue mer"
-                  width={1920}
-                  height={1088}
-                />
-              ) : null}
             </div>
           );
         })}
