@@ -3,12 +3,12 @@ import { useMemo, useState } from "react";
 
 import heroInterior from "@/assets/hero-interior.jpg";
 import atmosphere1 from "@/assets/atmosphere-1.jpg";
-import breakfastAsset from "@/assets/ridge-breakfast.webp.asset.json";
-import pistachioLatteAsset from "@/assets/ridge-pistachio-latte.png.asset.json";
-import mojitoFreshAsset from "@/assets/ridge-mojito-fresh.png.asset.json";
-import milkshakeAsset from "@/assets/ridge-milkshake-chocolate.png.asset.json";
-import sweetsAsset from "@/assets/ridge-sweet-chocolate.png.asset.json";
-import savoryAsset from "@/assets/ridge-savory-pizza-calzone.png.asset.json";
+import breakfastAsset from "@/assets/ridge-breakfast.webp";
+import pistachioLatteAsset from "@/assets/ridge-pistachio-latte.png";
+import mojitoFreshAsset from "@/assets/ridge-mojito-fresh.png";
+import milkshakeAsset from "@/assets/ridge-milkshake-chocolate.png";
+import sweetsAsset from "@/assets/ridge-sweet-chocolate.png";
+import savoryAsset from "@/assets/ridge-savory-pizza-calzone.png";
 
 import { menuSections } from "@/data/menu";
 import { SiteHeader } from "@/components/ridge/SiteHeader";
@@ -51,37 +51,37 @@ const sectionImages: Record<
   }
 > = {
   "petit-dejeuner": {
-    src: breakfastAsset.url,
+    src: breakfastAsset,
     alt: "Table de petit déjeuner en marbre avec croissants, omelette et fruits frais",
     w: 1600,
     h: 1104,
   },
   cafes: {
-    src: pistachioLatteAsset.url,
+    src: pistachioLatteAsset,
     alt: "Latte au pistache crémeux, saupoudré de brisures de pistache",
     w: 1408,
     h: 1760,
   },
   fraicheur: {
-    src: mojitoFreshAsset.url,
+    src: mojitoFreshAsset,
     alt: "Mojito rafraîchissant à la menthe et citron vert, servi avec glace pilée",
     w: 1408,
     h: 1760,
     secondary: {
-      src: milkshakeAsset.url,
+      src: milkshakeAsset,
       alt: "Milkshake chocolaté gourmand avec crème chantilly et éclats de noisette",
       w: 1408,
       h: 1760,
     },
   },
   sucre: {
-    src: sweetsAsset.url,
+    src: sweetsAsset,
     alt: "Moelleux au chocolat coulant avec glace vanille et banane",
     w: 1408,
     h: 1760,
   },
   sale: {
-    src: savoryAsset.url,
+    src: savoryAsset,
     alt: "Pizza garnie au thon et calzone doré avec frites rustiques",
     w: 1408,
     h: 1760,
