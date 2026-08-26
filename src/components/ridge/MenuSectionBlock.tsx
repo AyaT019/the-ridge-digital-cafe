@@ -101,7 +101,7 @@ export function MenuSectionBlock({
                     width={imageWidth}
                     height={imageHeight}
                     loading="lazy"
-                    className="h-72 w-full object-cover transition-transform duration-[1600ms] ease-out hover:scale-[1.04] sm:h-96 lg:h-[32rem]"
+                    className="h-72 w-full object-cover transition-transform duration-[1600ms] ease-out hover:scale-[1.04] sm:h-96 lg:h-[36rem] xl:h-[42rem]"
                   />
                 </div>
                 <figcaption className="text-label mt-4 flex items-center gap-3 text-muted-foreground">
@@ -117,7 +117,7 @@ export function MenuSectionBlock({
                       width={secondaryImageWidth}
                       height={secondaryImageHeight}
                       loading="lazy"
-                      className="h-72 w-full object-cover transition-transform duration-[1600ms] ease-out hover:scale-[1.04] sm:h-96 lg:h-[32rem]"
+                      className="h-72 w-full object-cover transition-transform duration-[1600ms] ease-out hover:scale-[1.04] sm:h-96 lg:h-[36rem] xl:h-[42rem]"
                     />
                   </div>
                 ) : null}
