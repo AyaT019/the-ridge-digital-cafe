@@ -28,16 +28,16 @@ export function MenuSectionBlock({
   return (
     <section
       id={section.id}
-      className="mx-auto w-full max-w-6xl scroll-mt-32 px-6 py-16 md:py-24"
+      className="mx-auto w-full max-w-6xl scroll-mt-28 px-5 py-14 sm:px-6 md:py-24"
     >
       <Reveal>
-        <header className="grid gap-6 border-t border-border pt-8 md:grid-cols-[auto_minmax(0,1fr)] md:gap-12">
+        <header className="grid gap-5 border-t border-border pt-7 md:grid-cols-[auto_minmax(0,1fr)] md:gap-12 md:pt-8">
           <div className="flex items-center gap-3">
             <LeafMark className="h-5 w-5 shrink-0 text-accent" />
             <p className="text-label text-muted-foreground">{section.eyebrow}</p>
           </div>
           <div className="min-w-0">
-            <h2 className="font-display text-4xl leading-[0.98] tracking-tight text-foreground sm:text-5xl md:text-6xl">
+            <h2 className="font-display text-[2.25rem] leading-[1] tracking-tight text-foreground sm:text-5xl md:text-6xl">
               {section.title}
             </h2>
             <p className="mt-4 max-w-lg text-sm leading-relaxed text-muted-foreground">
@@ -48,14 +48,14 @@ export function MenuSectionBlock({
       </Reveal>
 
       <div
-        className={`mt-12 grid gap-12 md:mt-16 ${
+        className={`mt-10 grid gap-10 md:mt-16 md:gap-12 ${
           image ? "lg:grid-cols-[1.2fr_0.8fr] lg:gap-16" : ""
         } ${reverse ? "lg:[&>figure]:order-first" : ""}`}
       >
-        <div className="grid gap-x-14 gap-y-12 sm:grid-cols-2">
+        <div className="grid gap-x-14 gap-y-10 sm:grid-cols-2 sm:gap-y-12">
           {section.groups.map((group, gi) => (
             <Reveal key={group.title} delay={gi * 60}>
-              <div>
+              <div className="min-w-0">
                 <div className="flex items-baseline gap-3">
                   <h3 className="text-label text-accent-foreground">
                     {group.title}
@@ -66,7 +66,7 @@ export function MenuSectionBlock({
                   {group.items.map((item) => (
                     <li key={item.name} className="group">
                       <div className="flex items-baseline gap-2">
-                        <span className="font-display text-lg leading-snug tracking-tight text-foreground transition-colors group-hover:text-accent-foreground">
+                        <span className="font-display min-w-0 text-[1.05rem] leading-snug tracking-tight text-foreground transition-colors group-hover:text-accent-foreground sm:text-lg">
                           {item.name}
                         </span>
                         <span className="leader" />
@@ -91,9 +91,9 @@ export function MenuSectionBlock({
         </div>
 
         {image ? (
-          <figure className="hidden lg:block">
+          <figure className="min-w-0">
             <Reveal delay={120}>
-              <div className="sticky top-32 space-y-10">
+              <div className="space-y-8 lg:sticky lg:top-32 lg:space-y-10">
                 <div className="overflow-hidden">
                   <img
                     src={image}
@@ -101,7 +101,7 @@ export function MenuSectionBlock({
                     width={imageWidth}
                     height={imageHeight}
                     loading="lazy"
-                    className="h-[32rem] w-full object-cover transition-transform duration-[1600ms] ease-out hover:scale-[1.04]"
+                    className="h-72 w-full object-cover transition-transform duration-[1600ms] ease-out hover:scale-[1.04] sm:h-96 lg:h-[32rem]"
                   />
                 </div>
                 <figcaption className="text-label mt-4 flex items-center gap-3 text-muted-foreground">
@@ -117,7 +117,7 @@ export function MenuSectionBlock({
                       width={secondaryImageWidth}
                       height={secondaryImageHeight}
                       loading="lazy"
-                      className="h-[32rem] w-full object-cover transition-transform duration-[1600ms] ease-out hover:scale-[1.04]"
+                      className="h-72 w-full object-cover transition-transform duration-[1600ms] ease-out hover:scale-[1.04] sm:h-96 lg:h-[32rem]"
                     />
                   </div>
                 ) : null}

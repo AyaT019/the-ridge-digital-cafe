@@ -53,20 +53,20 @@ export function SiteHeader({
       }`}
     >
       <div
-        className={`mx-auto grid w-full max-w-6xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-6 transition-all duration-700 ${
+        className={`mx-auto grid w-full max-w-6xl grid-cols-[minmax(0,1fr)_auto] items-center gap-4 px-5 transition-all sm:px-6 duration-700 ${
           scrolled ? "py-3" : "py-6"
         }`}
       >
         <a
           href="#top"
-          className={`font-display min-w-0 truncate text-2xl leading-none tracking-tight transition-colors ${
+          className={`font-display min-w-0 truncate text-xl leading-none sm:text-2xl tracking-tight transition-colors ${
             scrolled ? "text-foreground" : "text-espresso-foreground"
           }`}
         >
           The&nbsp;Ridge
         </a>
 
-        <div className="flex shrink-0 items-center gap-5">
+        <div className="flex shrink-0 items-center gap-4 sm:gap-5">
           <label
             className={`group hidden items-center gap-2 border-b pb-1 transition-colors sm:flex ${
               scrolled
@@ -120,8 +120,8 @@ export function SiteHeader({
           scrolled ? "max-h-16 opacity-100" : "max-h-0 opacity-0"
         }`}
       >
-        <nav className="mx-auto w-full max-w-6xl border-t border-border/70 px-6">
-          <ul className="scrollbar-none flex items-center gap-7 overflow-x-auto py-3">
+        <nav className="mx-auto w-full max-w-6xl border-t border-border/70 px-5 sm:px-6">
+          <ul className="scrollbar-none flex items-center gap-6 overflow-x-auto py-3 sm:gap-7">
             {menuSections.map((s) => (
               <li key={s.id} className="shrink-0">
                 <a
@@ -142,7 +142,7 @@ export function SiteHeader({
 
       {/* Mobile search */}
       <div
-        className={`px-6 pb-3 sm:hidden ${scrolled ? "block" : "hidden"}`}
+        className={`px-5 pb-3 sm:hidden ${scrolled ? "block" : "hidden"}`}
       >
         <input
           type="search"

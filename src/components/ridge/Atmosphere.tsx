@@ -16,7 +16,7 @@ export function Atmosphere({
   height: number;
 }) {
   return (
-    <section className="relative isolate h-[70vh] min-h-[420px] w-full overflow-hidden md:h-[85vh]">
+    <section className="relative isolate h-[60vh] min-h-[360px] w-full overflow-hidden md:h-[85vh]">
       <img
         src={image}
         alt={alt}
@@ -26,9 +26,9 @@ export function Atmosphere({
         className="absolute inset-0 h-full w-full object-cover"
       />
       <div className="veil absolute inset-0" />
-      <div className="relative flex h-full items-center justify-center px-6">
+      <div className="relative flex h-full items-center justify-center px-6 text-center">
         <Reveal className="text-center">
-          <p className="font-display text-3xl leading-[1.1] tracking-tight text-espresso-foreground sm:text-5xl md:text-6xl">
+          <p className="font-display text-[1.9rem] leading-[1.12] tracking-tight text-espresso-foreground sm:text-5xl md:text-6xl">
             {quote}
           </p>
           {caption ? (
