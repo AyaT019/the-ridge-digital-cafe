@@ -124,7 +124,7 @@ function Index() {
 
       <main>
         {/* Hero */}
-        <section className="relative isolate flex h-[100svh] min-h-[600px] w-full items-end overflow-hidden">
+        <section className="relative isolate flex h-[100svh] min-h-[520px] w-full items-end overflow-hidden">
           <img
             src={heroInterior}
             alt="Salle du café The Ridge, feuillage tropical et lampes en rotin dans une lumière dorée"
@@ -134,14 +134,14 @@ function Index() {
             className="animate-slow-zoom absolute inset-0 h-full w-full object-cover"
           />
           <div className="veil absolute inset-0" />
-          <div className="relative mx-auto w-full max-w-6xl px-6 pb-20 md:pb-28">
+          <div className="relative mx-auto w-full max-w-6xl px-5 pb-16 sm:px-6 md:pb-28">
             <p className="text-label animate-rise text-espresso-foreground/70">
               Kélibia · depuis 2019
             </p>
-            <h1 className="font-display animate-rise mt-6 text-6xl leading-[0.88] tracking-tight text-espresso-foreground sm:text-8xl md:text-[9rem]">
+            <h1 className="font-display animate-rise mt-5 text-[3.5rem] leading-[0.9] tracking-tight text-espresso-foreground sm:text-8xl md:text-[9rem]">
               The Ridge
             </h1>
-            <div className="mt-10 flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
+            <div className="mt-8 flex flex-col gap-6 md:mt-10 md:flex-row md:items-end md:justify-between">
               <p className="animate-rise max-w-md text-sm leading-relaxed text-espresso-foreground/75 md:text-base">
                 Un café-jardin où le grain est torréfié lentement, la pâte
                 reposée une nuit entière et les fruits pressés à la commande.
@@ -158,10 +158,10 @@ function Index() {
         </section>
 
         {/* Manifesto */}
-        <section className="mx-auto w-full max-w-3xl px-6 py-20 text-center md:py-28">
+        <section className="mx-auto w-full max-w-3xl px-5 py-16 text-center sm:px-6 md:py-28">
           <Reveal>
             <Ornament />
-            <p className="font-display mt-8 text-2xl leading-[1.3] tracking-tight text-foreground md:text-4xl">
+            <p className="font-display mt-8 text-xl leading-[1.35] tracking-tight text-foreground sm:text-2xl md:text-4xl">
               Rien ici n'est pressé. Le café coule, la lumière tourne, et la
               journée prend la forme de votre table.
             </p>
@@ -170,7 +170,7 @@ function Index() {
         </section>
 
         {q ? (
-          <div className="mx-auto w-full max-w-6xl px-6">
+          <div className="mx-auto w-full max-w-6xl px-5 sm:px-6">
             <p className="text-label border-b border-border pb-4 text-muted-foreground">
               {resultCount} résultat{resultCount > 1 ? "s" : ""} pour « {query} »
             </p>
@@ -178,7 +178,7 @@ function Index() {
         ) : null}
 
         {sections.length === 0 ? (
-          <div className="mx-auto w-full max-w-6xl px-6 py-24 text-center">
+          <div className="mx-auto w-full max-w-6xl px-5 py-20 text-center sm:px-6">
             <p className="font-display text-3xl tracking-tight text-foreground">
               Rien à cette carte sous ce nom.
             </p>
