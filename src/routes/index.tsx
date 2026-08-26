@@ -3,7 +3,6 @@ import { useMemo, useState } from "react";
 
 import heroInterior from "@/assets/hero-interior.jpg";
 import atmosphere1 from "@/assets/atmosphere-1.jpg";
-import atmosphere2 from "@/assets/atmosphere-2.jpg";
 import breakfastAsset from "@/assets/ridge-breakfast.webp.asset.json";
 import pistachioLatteAsset from "@/assets/ridge-pistachio-latte.png.asset.json";
 import mojitoFreshAsset from "@/assets/ridge-mojito-fresh.png.asset.json";
@@ -214,16 +213,6 @@ function Index() {
                   alt="Fauteuil en velours près d'une fenêtre, tasse de café et plantes tropicales"
                   quote="Prenez votre temps."
                   caption="Salle intérieure · fin d'après-midi"
-                  width={1920}
-                  height={1088}
-                />
-              ) : null}
-              {!q && i === 2 ? (
-                <Atmosphere
-                  image={atmosphere2}
-                  alt="Terrasse du café le soir, guirlandes lumineuses et lanternes en laiton face à la mer"
-                  quote="Le soir tombe, la table reste."
-                  caption="Terrasse · vue mer"
                   width={1920}
                   height={1088}
                 />
