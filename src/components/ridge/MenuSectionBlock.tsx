@@ -52,33 +52,33 @@ export function MenuSectionBlock({
           image ? "lg:grid-cols-[1.2fr_0.8fr] lg:gap-16 xl:gap-24" : ""
         } ${reverse ? "lg:[&>figure]:order-first" : ""}`}
       >
-        <div className="grid gap-x-14 gap-y-10 sm:grid-cols-2 sm:gap-y-12">
+        <div className="grid gap-x-14 gap-y-10 sm:grid-cols-2 sm:gap-y-12 lg:gap-x-20 xl:gap-x-24">
           {section.groups.map((group, gi) => (
             <Reveal key={group.title} delay={gi * 60}>
               <div className="min-w-0">
                 <div className="flex items-baseline gap-3">
-                  <h3 className="text-label text-accent-foreground">
+                  <h3 className="text-label text-accent-foreground lg:text-[0.6875rem]">
                     {group.title}
                   </h3>
                   <span className="hairline flex-1 opacity-70" />
                 </div>
-                <ul className="mt-5 space-y-4">
+                <ul className="mt-5 space-y-4 lg:mt-6 lg:space-y-5">
                   {group.items.map((item) => (
                     <li key={item.name} className="group">
                       <div className="flex items-baseline gap-2">
-                        <span className="font-display min-w-0 text-[1.05rem] leading-snug tracking-tight text-foreground transition-colors group-hover:text-accent-foreground sm:text-lg">
+                        <span className="font-display min-w-0 text-[1.05rem] leading-snug tracking-tight text-foreground transition-colors group-hover:text-accent-foreground sm:text-lg md:text-[1.15rem] lg:text-xl">
                           {item.name}
                         </span>
                         <span className="leader" />
-                        <span className="price-tabular shrink-0 text-sm text-foreground/80">
+                        <span className="price-tabular shrink-0 text-sm text-foreground/80 md:text-base">
                           {item.price}
-                          <span className="ml-1 text-[0.6rem] uppercase tracking-[0.2em] text-muted-foreground">
+                          <span className="ml-1 text-[0.6rem] uppercase tracking-[0.2em] text-muted-foreground lg:text-[0.65rem]">
                             dt
                           </span>
                         </span>
                       </div>
                       {item.description ? (
-                        <p className="mt-1 max-w-md text-[0.78rem] leading-relaxed text-muted-foreground/85">
+                        <p className="mt-1 max-w-md text-[0.78rem] leading-relaxed text-muted-foreground/85 md:text-[0.82rem] lg:mt-1.5 lg:max-w-lg lg:text-[0.875rem]">
                           {item.description}
                         </p>
                       ) : null}
