@@ -28,19 +28,19 @@ export function MenuSectionBlock({
   return (
     <section
       id={section.id}
-      className="mx-auto w-full max-w-6xl scroll-mt-28 px-5 py-14 sm:px-6 md:py-24"
+      className="mx-auto w-full max-w-6xl scroll-mt-28 px-5 py-14 sm:px-6 md:py-24 lg:max-w-7xl xl:max-w-[90rem] xl:py-32"
     >
       <Reveal>
-        <header className="grid gap-5 border-t border-border pt-7 md:grid-cols-[auto_minmax(0,1fr)] md:gap-12 md:pt-8">
+        <header className="grid gap-5 border-t border-border pt-7 md:grid-cols-[auto_minmax(0,1fr)] md:gap-12 md:pt-8 lg:gap-16">
           <div className="flex items-center gap-3">
-            <LeafMark className="h-5 w-5 shrink-0 text-accent" />
+            <LeafMark className="h-5 w-5 shrink-0 text-accent lg:h-6 lg:w-6" />
             <p className="text-label text-muted-foreground">{section.eyebrow}</p>
           </div>
           <div className="min-w-0">
-            <h2 className="font-display text-[2.25rem] leading-[1] tracking-tight text-foreground sm:text-5xl md:text-6xl">
+            <h2 className="font-display text-[2.25rem] leading-[1] tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl">
               {section.title}
             </h2>
-            <p className="mt-4 max-w-lg text-sm leading-relaxed text-muted-foreground">
+            <p className="mt-4 max-w-lg text-sm leading-relaxed text-muted-foreground md:text-base lg:mt-5 lg:max-w-xl">
               {section.intro}
             </p>
           </div>
@@ -48,8 +48,8 @@ export function MenuSectionBlock({
       </Reveal>
 
       <div
-        className={`mt-10 grid gap-10 md:mt-16 md:gap-12 ${
-          image ? "lg:grid-cols-[1.2fr_0.8fr] lg:gap-16" : ""
+        className={`mt-10 grid gap-10 md:mt-16 md:gap-12 lg:mt-20 lg:gap-20 ${
+          image ? "lg:grid-cols-[1.2fr_0.8fr] lg:gap-16 xl:gap-24" : ""
         } ${reverse ? "lg:[&>figure]:order-first" : ""}`}
       >
         <div className="grid gap-x-14 gap-y-10 sm:grid-cols-2 sm:gap-y-12">
