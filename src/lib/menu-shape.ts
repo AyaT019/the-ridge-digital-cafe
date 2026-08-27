@@ -29,11 +29,11 @@ export function buildSections(rows: MenuItemRow[]): MenuSection[] {
           group = { title: row.group_title, items: [] };
           groups.push(group);
         }
-        group.items.push({
-          name: row.name,
-          description: row.description ?? undefined,
-          price: row.price,
-        });
+        group.items.push(
+          row.description
+            ? { name: row.name, description: row.description, price: row.price }
+            : { name: row.name, price: row.price },
+        );
       }
 
       return { ...section, groups };
