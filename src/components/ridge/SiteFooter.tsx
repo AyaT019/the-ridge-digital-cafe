@@ -84,6 +84,12 @@ export function SiteFooter() {
         <div className="mt-14 flex flex-col gap-4 border-t border-espresso-foreground/15 pt-8 text-[0.7rem] uppercase tracking-[0.24em] text-espresso-foreground/40 sm:flex-row sm:items-center sm:justify-between">
           <span>© {new Date().getFullYear()} The Ridge</span>
           <span>Prix en dinar tunisien · Service inclus</span>
+          <Link
+            to="/admin"
+            className="border-b border-espresso-foreground/20 pb-0.5 transition-colors hover:text-accent"
+          >
+            Admin
+          </Link>
         </div>
       </div>
     </footer>
