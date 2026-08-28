@@ -11,6 +11,7 @@ import sweetsAsset from "@/assets/ridge-sweet-chocolate.png";
 import savoryAsset from "@/assets/ridge-savory-pizza-calzone.png";
 
 import { menuSections } from "@/data/menu";
+import { getMenu } from "@/lib/menu.functions";
 import { SiteHeader } from "@/components/ridge/SiteHeader";
 import { SiteFooter } from "@/components/ridge/SiteFooter";
 import { MenuSectionBlock } from "@/components/ridge/MenuSectionBlock";
@@ -19,6 +20,13 @@ import { Reveal } from "@/components/ridge/Reveal";
 import { Ornament } from "@/components/ridge/Ornament";
 
 export const Route = createFileRoute("/")({
+  loader: async () => {
+    try {
+      return { sections: await getMenu() };
+    } catch {
+      return { sections: menuSections };
+    }
+  },
   head: () => ({
     meta: [
       { title: "The Ridge — Carte du café | Kélibia" },
@@ -37,6 +45,13 @@ export const Route = createFileRoute("/")({
       { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
+  errorComponent: () => (
+    <main className="flex min-h-screen items-center justify-center bg-background px-5">
+      <p className="font-display text-2xl text-foreground">
+        La carte est momentanément indisponible.
+      </p>
+    </main>
+  ),
   component: Index,
 });
 
