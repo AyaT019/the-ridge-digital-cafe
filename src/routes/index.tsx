@@ -104,12 +104,13 @@ const sectionImages: Record<
 };
 
 function Index() {
+  const { sections: allSections } = Route.useLoaderData();
   const [query, setQuery] = useState("");
   const q = query.trim().toLowerCase();
 
   const sections = useMemo(() => {
-    if (!q) return menuSections;
-    return menuSections
+    if (!q) return allSections;
+    return allSections
       .map((section) => ({
         ...section,
         groups: section.groups
@@ -125,7 +126,7 @@ function Index() {
           .filter((group) => group.items.length > 0),
       }))
       .filter((section) => section.groups.length > 0);
-  }, [q]);
+  }, [q, allSections]);
 
   const resultCount = sections.reduce(
     (n, s) => n + s.groups.reduce((m, g) => m + g.items.length, 0),
