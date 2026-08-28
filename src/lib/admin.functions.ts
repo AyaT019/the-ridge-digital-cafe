@@ -34,10 +34,10 @@ export const getAdminState = createServerFn({ method: "GET" }).handler(
 
 export const unlockAdmin = createServerFn({ method: "POST" })
   .inputValidator((data: { password: string }) =>
-    z.object({ password: z.string().min(1).max(200) }).parse(data),
+    z.object({ password: z.string().trim().min(1).max(200) }).parse(data),
   )
   .handler(async ({ data }) => {
-    const expected = process.env["ADMIN_PASSWORD"];
+    const expected = process.env["ADMIN_PASSWORD"]?.trim();
     if (!expected) throw new Error("ADMIN_PASSWORD is not configured");
     if (!passwordMatches(data.password, expected)) {
       return { ok: false as const };
