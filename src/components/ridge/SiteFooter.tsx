@@ -1,3 +1,5 @@
+import { Link } from "@tanstack/react-router";
+
 const hours = [
   { days: "Lundi — Jeudi", time: "07:30 — 23:00" },
   { days: "Vendredi — Samedi", time: "07:30 — 01:00" },

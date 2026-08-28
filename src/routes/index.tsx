@@ -11,6 +11,7 @@ import sweetsAsset from "@/assets/ridge-sweet-chocolate.png";
 import savoryAsset from "@/assets/ridge-savory-pizza-calzone.png";
 
 import { menuSections } from "@/data/menu";
+import { getMenu } from "@/lib/menu.functions";
 import { SiteHeader } from "@/components/ridge/SiteHeader";
 import { SiteFooter } from "@/components/ridge/SiteFooter";
 import { MenuSectionBlock } from "@/components/ridge/MenuSectionBlock";
@@ -19,6 +20,13 @@ import { Reveal } from "@/components/ridge/Reveal";
 import { Ornament } from "@/components/ridge/Ornament";
 
 export const Route = createFileRoute("/")({
+  loader: async () => {
+    try {
+      return { sections: await getMenu() };
+    } catch {
+      return { sections: menuSections };
+    }
+  },
   head: () => ({
     meta: [
       { title: "The Ridge — Carte du café | Kélibia" },
@@ -37,6 +45,13 @@ export const Route = createFileRoute("/")({
       { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
+  errorComponent: () => (
+    <main className="flex min-h-screen items-center justify-center bg-background px-5">
+      <p className="font-display text-2xl text-foreground">
+        La carte est momentanément indisponible.
+      </p>
+    </main>
+  ),
   component: Index,
 });
 
@@ -89,12 +104,13 @@ const sectionImages: Record<
 };
 
 function Index() {
+  const { sections: allSections } = Route.useLoaderData();
   const [query, setQuery] = useState("");
   const q = query.trim().toLowerCase();
 
   const sections = useMemo(() => {
-    if (!q) return menuSections;
-    return menuSections
+    if (!q) return allSections;
+    return allSections
       .map((section) => ({
         ...section,
         groups: section.groups
@@ -110,7 +126,7 @@ function Index() {
           .filter((group) => group.items.length > 0),
       }))
       .filter((section) => section.groups.length > 0);
-  }, [q]);
+  }, [q, allSections]);
 
   const resultCount = sections.reduce(
     (n, s) => n + s.groups.reduce((m, g) => m + g.items.length, 0),
