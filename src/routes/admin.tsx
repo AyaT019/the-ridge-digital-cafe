@@ -168,6 +168,7 @@ function AdminPage() {
           </p>
           <input
             type="password"
+            required
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             autoComplete="current-password"
